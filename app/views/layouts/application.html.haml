@@ -1,0 +1,30 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Jammerr
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    - if user_signed_in?
+      .left-navigation
+        %h1.brand Jammerr
+        %ul.user-navigation
+          %li.user-navigation-li
+            %a.user-navigation-item#user-navigation-home Home
+          %li.user-navigation-li
+            %a.user-navigation-item#user-navigation-search Search
+          %li.user-navigation-li
+            %a.user-navigation-item#user-navigation-profile Profile
+          %li.user-navigation-li
+            %a.user-navigation-item#user-navigation-settings Settings
+          %li.user-navigation-li
+            = link_to "Sign Out", destroy_user_session_path, class: "user-navigation-item", method: :delete
+      .container.right-content
+        .row
+          %p.notice= notice
+          %p.alert= alert
+          = yield
+    - else
+      = yield

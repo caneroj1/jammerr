@@ -1,0 +1,108 @@
+@import "snake_vars";
+p,
+td,
+tr,
+label,
+input,
+span,
+textarea,
+.btn,
+button,
+a,
+h2,
+h3,
+h4,
+h5
+{
+  font-weight: 200;
+}
+
+h1
+{
+  font-weight: 300;
+}
+
+.left-navigation
+{
+  display: inline-block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 20%;
+}
+
+.right-content {
+  width: 80%;
+  right: 0;
+  position: absolute;
+  height: auto;
+}
+
+.brand
+{
+  margin-bottom: 0;
+  font-weight: 100;
+}
+
+.brand,
+.user-navigation
+{
+  padding-left: 20px;
+}
+
+.user-navigation
+{
+  padding-top: 20px;
+}
+
+.user-navigation-li
+{
+  list-style: none;
+}
+
+.user-navigation-item
+{
+  font-family: "Helvetica Neue";
+  font-weight: 100;
+  font-size: 40px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  color: #000;
+}
+
+.user-navigation-item:hover
+{
+  cursor: pointer;
+  font-size: 55px;
+  font-weight: 200;
+  text-decoration: none;
+}
+
+.right-content
+{
+  display: inline-block;
+  padding-right: 30px;
+  padding-bottom: 30px;
+}
+
+.notice
+{
+  padding:10px;
+  width:100%;
+  float:left;
+  color: $brand-success;
+  height: 30px;
+}
+
+.alert
+{
+  float:left;
+  padding:10px;
+  color: $brand-danger;
+  width:100%;
+  height: 30px;
+}

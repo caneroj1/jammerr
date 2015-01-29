@@ -1,0 +1,10 @@
+.user-body-content
+  .col-md-12
+    %h2.profile-header Your Profile
+    .col-md-5.profile-left
+      %p Name:
+      %p="Email: #{current_user.email}"
+      %button#upload-song.btn.btn-info Upload Songs
+    .col-md-5.profile-right
+      %p Instruments:
+      %p Genres:

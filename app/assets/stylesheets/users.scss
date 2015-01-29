@@ -1,0 +1,32 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.profile-header
+{
+  margin-top: 0px;
+}
+
+.profile-left,
+.profile-right
+{
+  padding-left: 0 !important;
+}
+
+#song-column
+{
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 0;
+  background-color: #333;
+  height: 100%;
+  color: white;
+}
+
+#hide
+{
+  float: right;
+  cursor: pointer;
+  padding: 10px;
+}
