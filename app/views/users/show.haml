@@ -1,10 +1,22 @@
 .user-body-content
   .col-md-12
-    %h2.profile-header Your Profile
-    .col-md-5.profile-left
-      %p Name:
-      %p="Email: #{current_user.email}"
-      %button#upload-song.btn.btn-info Upload Songs
-    .col-md-5.profile-right
-      %p Instruments:
-      %p Genres:
+    %h2.profile-header.text-center Joseph Canero
+    .col-md-12.text-center.profile-body-content
+      .col-md-4
+        .profile-navigation-item
+          %span.glyphicon.glyphicon-headphones.profile-glyph
+          %br
+          Add Jammer
+        %h3 Jammers
+      .col-md-4
+        .profile-navigation-item#upload-song
+          %span.glyphicon.glyphicon-music.profile-glyph
+          %br
+          Upload Jam
+        %h3 Jams
+      .col-md-4
+        .profile-navigation-item
+          %span.glyphicon.glyphicon-film.profile-glyph
+          %br
+          Upload Video
+        %h3 Cams

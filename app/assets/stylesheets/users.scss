@@ -5,6 +5,38 @@
 .profile-header
 {
   margin-top: 0px;
+  font-size: 40px;
+}
+
+.profile-navigation-item
+{
+  width: 85px;
+  height: 100px;
+  font-size: 13px;
+  font-weight: 200px;
+  margin: auto;
+  transform: all 0.2s ease;
+  -moz-transform: all 0.2s ease;
+  -webkit-transform: all 0.2s ease;
+  color: rgb(51, 51, 51);
+}
+
+.profile-navigation-item:hover
+{
+  cursor: pointer;
+  background-color: #ebecea;;
+}
+
+.profile-glyph
+{
+  font-size: 40px;
+  width: 100%;
+}
+
+.profile-glyph,
+.profile-body-content
+{
+  margin-top: 20px;
 }
 
 .profile-left,
