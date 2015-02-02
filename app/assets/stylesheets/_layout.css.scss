@@ -61,7 +61,8 @@ h1
   list-style: none;
 }
 
-.user-navigation-item
+.user-navigation-item,
+.user-navigation-item-white
 {
   font-family: "Helvetica Neue";
   font-weight: 100;
@@ -80,6 +81,20 @@ h1
   font-size: 55px;
   font-weight: 200;
   text-decoration: none;
+}
+
+.user-navigation-item-white
+{
+  color: #fff;
+}
+
+.user-navigation-item-white:hover
+{
+  cursor: pointer;
+  font-size: 55px;
+  font-weight: 200;
+  text-decoration: none;
+  color: #fff;
 }
 
 .right-content
@@ -105,4 +120,9 @@ h1
   color: $brand-danger;
   width:100%;
   height: 30px;
+}
+
+.white
+{
+  color: #fff;
 }
