@@ -55,8 +55,10 @@ group :test do
   gem 'launchy'
 end
 
+gem 'protected_attributes'
 gem 'snake'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'haml-rails'
 gem 'devise'
 gem 'html2haml'
+gem 'awesome_print'

@@ -25,5 +25,13 @@ describe User do
     it "has a list of instruments" do
       expect(user.instruments.class).to eq(Array)
     end
+
+    it "should initially be an empty array" do
+      expect(user.instruments).to be_blank
+    end
+
+    it "can store instruments" do
+      expect(FactoryGirl.create(:user_with_instruments).instruments).to eq(%w{Drums Guitar Bass})
+    end
   end
 end
