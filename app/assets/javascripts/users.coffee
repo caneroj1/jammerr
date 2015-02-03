@@ -4,6 +4,7 @@
 
 upload_song = ->
   $(document).on 'click', '#upload-song', ->
+    $('#hide').css('display', 'block')
     $('#song-column').animate({
       width: "25%"
       }, 150, "linear",
@@ -11,6 +12,7 @@ upload_song = ->
         return)
   $(document).on 'click', '#hide', ->
     $('#song-column').fadeOut(150, ()->
+      $('#hide').css('display', 'none')
       $('#song-column').css('display', 'block').css('width', '0'))
 
 $('body').bind('page:change', upload_song)

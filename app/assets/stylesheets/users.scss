@@ -2,10 +2,45 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.profile-header
+.profile-header,
+.search-header
 {
   margin-top: 0px;
   font-size: 40px;
+}
+
+.search-header
+{
+  margin-top: 100px;
+}
+
+.search-header,
+.search-sub-header
+{
+  font-weight: 100 !important;
+}
+
+.search-sub-header
+{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.search-bar
+{
+  padding: 10px;
+  width: 50%;
+}
+
+.search-bar,
+.search-button
+{
+  height: 45px !important;
+}
+
+.search-group
+{
+  margin-top: 15px;
 }
 
 .profile-navigation-item
@@ -62,6 +97,7 @@
   float: right;
   cursor: pointer;
   padding: 10px;
+  display: none;
 }
 
 .instrument-pic

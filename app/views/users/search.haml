@@ -1,5 +1,16 @@
 .search-background
 .user-body-content
   #search-body
-    .col-md-12
-      %h2.profile-header Search
+    .col-md-12.text-center
+      %h2.search-header.white Ready to Jam?
+      %h2.search-sub-header.white Search by instrument
+      .col-md-6.col-md-offset-3
+        %form
+          .form-group
+            .input-group.search-group
+              %input.form-control.search-bar{ autofocus: true }
+              %span.input-group-btn
+                %button.btn.btn-info.search-button Find Jammers
+:javascript
+  $('.user-navigation-item, .brand').addClass('user-navigation-item-white').removeClass('user-navigation-item');
+  $('.search-background').fadeIn(300);
