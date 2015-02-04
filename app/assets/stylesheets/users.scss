@@ -1,6 +1,18 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "snake_vars";
+
+.sign-in-title,
+.remember-me
+{
+  color: $brand-info;
+}
+
+.sign-in-well
+{
+  background-color: rgba(245, 245, 245, 0.55) !important;
+}
 
 .profile-header,
 .search-header
@@ -9,7 +21,8 @@
   font-size: 40px;
 }
 
-.search-header
+.search-header,
+.sign-in-row
 {
   margin-top: 100px;
 }
@@ -113,6 +126,7 @@
   margin-bottom: 10px;
 }
 
+.sign-in-up-background,
 .search-background
 {
   display:none;
@@ -122,5 +136,15 @@
   width:100%;
   height:100%;
   z-index:-1;
+}
+
+.search-background
+{
   background-image: url(/assets/jammer_background.jpg);
+}
+
+.sign-in-up-background
+{
+  display: block;
+  background-image: url(/assets/sign_in_up.jpg);
 }

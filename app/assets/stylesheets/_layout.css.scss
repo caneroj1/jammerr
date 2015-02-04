@@ -1,4 +1,5 @@
 @import "snake_vars";
+
 p,
 td,
 tr,
@@ -125,4 +126,26 @@ h1
 .white
 {
   color: #fff;
+}
+
+.name-field,
+.name-field-right
+{
+  width:45%;
+  display: inline-block;
+}
+
+.name-field-right
+{
+  float:right;
+}
+
+#error_explanation
+{
+  color: $brand-danger;
+}
+
+#notice
+{
+  color: $brand-info;
 }

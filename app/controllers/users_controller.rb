@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user_id_cookie
 
   def show
+    @user = User.find(params[:id])
   end
 
   def search
@@ -19,16 +20,16 @@ class UsersController < ApplicationController
   end
 
   def async
+    @user = User.find(params[:id])
     respond_to do |format|
-      format.js { render "#{params[:page]}", layout: false }
+      format.html { render "#{params[:page]}", layout: false }
     end
   end
 
   private
   def prepare(params, user)
-    instruments = params[:user][:instruments]
-    params[:user][:instruments] = instruments.split(' ')
-    params[:user][:instruments] += (user.instruments)
+    return params[:user] if params[:user][:instruments].nil?
+    params[:user][:instruments] = params[:user][:instruments].split(' ')
     params[:user]
   end
 

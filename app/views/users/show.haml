@@ -1,6 +1,9 @@
 .user-body-content
   .col-md-12
-    %h2.profile-header.text-center Joseph Canero
+    %h2.profile-header.text-center
+      Joseph Canero
+    .col-md-12.text-center
+      %p= @user.location
     .col-md-12.text-center.instruments-section
       %span
         = image_tag "guitar.svg", class: "instrument-pic"

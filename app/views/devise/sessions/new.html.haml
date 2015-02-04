@@ -1,20 +1,24 @@
+.sign-in-up-background
 .container
   .row
-    .col-md-8.col-md-offset-2
-      %h2 Log in
-      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-        .form-group
-          = f.label :email, class: "form-label"
-          %br/
-          = f.email_field :email, autofocus: true, class: "form-control"
-        .form-group
-          = f.label :password, class: "form-label"
-          %br/
-          = f.password_field :password, autocomplete: "off", class: "form-control"
-        - if devise_mapping.rememberable?
+    .col-md-6.col-md-offset-3.sign-in-row
+      .well.sign-in-well
+        %h1.sign-in-title.white Sign In
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          - if alert
+            %h3#error_explanation= alert
+          - if notice
+            %h3#notice= notice
           .form-group
-            = f.check_box :remember_me
-            = f.label :remember_me
-        .actions
-          = f.submit "Log In", class: "btn btn-primary"
-      = render "devise/shared/links"
+            %br/
+            = f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email"
+          .form-group
+            = f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password"
+          - if devise_mapping.rememberable?
+            .form-group.text-left
+              = f.check_box :remember_me
+              = f.label :remember_me, class: "white"
+          .actions.text-left
+            = f.submit "Log In", class: "btn btn-primary"
+          .form-group.text-left
+            = render "devise/shared/links"

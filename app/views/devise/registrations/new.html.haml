@@ -1,24 +1,28 @@
+.sign-in-up-background
 .container
   .row
-    .col-md-8.col-md-offset-2
-      %h2 Join Us
-      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-        = devise_error_messages!
-        .form-group
-          = f.label :email, class: "form-label"
-          %br/
-          = f.email_field :email, autofocus: true, class: "form-control"
-        .form-group
-          = f.label :password, class: "form-label"
-          - if @validatable
-            %em
-              (#{@minimum_password_length} characters minimum)
-          %br/
-          = f.password_field :password, autocomplete: "off", class: "form-control"
-        .form-group
-          = f.label :password_confirmation, class: "form-label"
-          %br/
-          = f.password_field :password_confirmation, autocomplete: "off", class: "form-control"
-        .actions
-          = f.submit "Sign Up!", class: "btn btn-primary"
-      = render "devise/shared/links"
+    .col-md-6.col-md-offset-3.sign-in-row
+      .well.sign-in-well
+        %h1.white Join Jammerr
+        = form_for(resource, as: resource_name, url: registration_path(resource_name), class: "text-left") do |f|
+          = devise_error_messages!
+          .form-group.text-left.name-field
+            %br/
+            = f.text_field :first_name, autofocus: true, class: "form-control", placeholder: "First name"
+          .form-group.text-right.name-field-right
+            %br/
+            = f.text_field :last_name, class: "form-control", placeholder: "Last name"
+          .form-group
+            = f.email_field :email, class: "form-control", placeholder: "Email"
+          .form-group.text-left
+            - if @validatable
+              %em.white
+                (#{@minimum_password_length} characters minimum)
+            %br/
+            = f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password"
+          .form-group
+            = f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Retype password"
+          .actions.text-left
+            = f.submit "Sign Up!", class: "btn btn-primary"
+          .form-group.text-left
+            = render "devise/shared/links"
