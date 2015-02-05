@@ -2,6 +2,7 @@
   .col-md-12
     %h1.profile-header.text-center
       Joseph Canero
+      = can_edit_profile?
     .col-md-12.text-center
       %p= @user.location
     .col-md-12.text-center.instruments-section
