@@ -12,13 +12,13 @@
         %h1.brand Jammerr
         %ul.user-navigation
           %li.user-navigation-li
-            %a.user-navigation-item#user-navigation-home Home
+            %a.user-navigation-item#user-navigation-home{ href: "#home", data: { toggle: :tab } } Home
           %li.user-navigation-li
-            %a.user-navigation-item#user-navigation-search Search
+            %a.user-navigation-item#user-navigation-search{ href: "#search", data: { toggle: :tab } } Search
           %li.user-navigation-li
-            %a.user-navigation-item#user-navigation-profile Profile
+            %a.user-navigation-item#user-navigation-profile{ href: "#profile", data: { toggle: :tab } } Profile
           %li.user-navigation-li
-            %a.user-navigation-item#user-navigation-settings Settings
+            %a.user-navigation-item#user-navigation-settings{ href: "#settings", data: { toggle: :tab } } Settings
           %li.user-navigation-li
             = link_to "Sign Out", destroy_user_session_path, class: "user-navigation-item", method: :delete
       .container.right-content

@@ -1,34 +1,12 @@
 .user-body-content
   .col-md-12
-    %h2.profile-header.text-center
-      Joseph Canero
-    .col-md-12.text-center
-      %p= @user.location
-    .col-md-12.text-center.instruments-section
-      %span
-        = image_tag "guitar.svg", class: "instrument-pic"
-      %span
-        = image_tag "clarinet.svg", class: "instrument-pic"
-      %span
-        = image_tag "piano.svg", class: "instrument-pic"
-      %span
-        = image_tag "saxophone.svg", class: "instrument-pic"
-    .col-md-12.text-center.profile-body-content
-      .col-md-4
-        .profile-navigation-item
-          %span.glyphicon.glyphicon-headphones.profile-glyph
-          %br
-          Add Jammer
-        %h3 Jammers
-      .col-md-4
-        .profile-navigation-item#upload-song
-          %span.glyphicon.glyphicon-music.profile-glyph
-          %br
-          Upload Jam
-        %h3 Jams
-      .col-md-4
-        .profile-navigation-item
-          %span.glyphicon.glyphicon-film.profile-glyph
-          %br
-          Upload Video
-        %h3 Cams
+    .search-background
+    .tab-content
+      .tab-pane#search{ class: matches_action?('search') }
+        = render partial: "search"
+      -# .tab-pane#home{ class: matches_action?('home') }
+        -# = render partial: "home"
+      .tab-pane#profile{ class: matches_action?('show') }
+        = render partial: "profile"
+      .tab-pane#settings{ class: matches_action?('settings') }
+        = render partial: "settings"
