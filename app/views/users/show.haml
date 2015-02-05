@@ -1,40 +1,5 @@
 .user-body-content
   .col-md-12
-<<<<<<< HEAD
-    %h2.profile-header.text-center
-      = @user.name
-      = can_edit_profile?
-    .col-md-12.text-center
-      %p= @user.location
-    .col-md-12.text-center.instruments-section
-      %span
-        = image_tag "guitar.svg", class: "instrument-pic"
-      %span
-        = image_tag "clarinet.svg", class: "instrument-pic"
-      %span
-        = image_tag "piano.svg", class: "instrument-pic"
-      %span
-        = image_tag "saxophone.svg", class: "instrument-pic"
-    .col-md-12.text-center.profile-body-content
-      .col-md-4
-        .profile-navigation-item
-          %span.glyphicon.glyphicon-headphones.profile-glyph
-          %br
-          Add Jammer
-        %h3 Jammers
-      .col-md-4
-        .profile-navigation-item#upload-song
-          %span.glyphicon.glyphicon-music.profile-glyph
-          %br
-          Upload Jam
-        %h3 Jams
-      .col-md-4
-        .profile-navigation-item
-          %span.glyphicon.glyphicon-film.profile-glyph
-          %br
-          Upload Video
-        %h3 Cams
-=======
     .search-background
     .tab-content
       .tab-pane#search{ class: matches_action?('search') }
@@ -45,4 +10,3 @@
         = render partial: "profile"
       .tab-pane#settings{ class: matches_action?('settings') }
         = render partial: "settings"
->>>>>>> remove_ajax_for_profile
