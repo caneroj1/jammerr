@@ -62,6 +62,10 @@ describe User do
       expect(FactoryGirl.build(:user, last_name: nil)).to_not be_valid
     end
 
+    it "neatly formats first and last names" do
+      expect(user.name).to eq("#{user.first_name} #{user.last_name}")
+    end
+    
     context "with location" do
       let(:user) { FactoryGirl.create(:user_with_location) }
 

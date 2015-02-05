@@ -10,7 +10,7 @@ upload_song = ->
       }, 150, "linear",
       ()->
         return)
-        
+
   $(document).on 'click', '#hide', ->
     $('#song-column').fadeOut(150, ()->
       $('#hide').css('display', 'none')
@@ -21,8 +21,12 @@ change_bg_for_search = ->
     $('.user-navigation-item, .brand').addClass('user-navigation-item-white').removeClass('user-navigation-item');
     $('.search-background').fadeIn(300);
 
+enable_tooltips = ->
+  $('[data-toggle="tooltip"]').tooltip()
 
 $('body').bind('page:change', upload_song)
+$('body').bind('page:change', enable_tooltips)
+
 $ ->
   if $('.notice').length > 0
     $('.notice').animate({
@@ -36,3 +40,4 @@ $ ->
 
   do upload_song
   do change_bg_for_search
+  do enable_tooltips

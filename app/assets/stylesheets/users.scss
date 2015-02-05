@@ -148,3 +148,17 @@
   display: block;
   background-image: url(/assets/sign_in_up.jpg);
 }
+
+#edit-pencil
+{
+  font-size: 25px;
+  transition: 0.2s all ease;
+  -moz-transition: 0.2s all ease;
+  -webkit-transition: 0.2s all ease;
+}
+
+#edit-pencil:hover
+{
+  color: $brand-info;
+  cursor: pointer;
+}

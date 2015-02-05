@@ -7,6 +7,8 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+    = favicon_link_tag 'apple-touch-icon.png', rel: 'apple-touch-icon', type: 'image/png'
+    = favicon_link_tag 'apple-touch-icon.png', rel: 'apple-touch-icon-precomposed', type: 'image/png'
     - if user_signed_in?
       .left-navigation
         %h1.brand Jammerr

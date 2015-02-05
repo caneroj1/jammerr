@@ -24,4 +24,8 @@ class User < ActiveRecord::Base
   def incomplete_location
     address.blank? || state.blank? || city.blank?
   end
+
+  def name
+    "#{first_name} #{last_name}"
+  end
 end
