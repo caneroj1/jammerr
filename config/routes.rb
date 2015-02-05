@@ -10,7 +10,6 @@ Rails.application.routes.draw do
     member do
       get :search,    to: "users#search"
       get :settings,  to: "users#settings"
-      get :async,     to: "users#async"
     end
   end
 

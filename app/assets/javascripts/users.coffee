@@ -17,15 +17,23 @@ upload_song = ->
       $('#song-column').css('display', 'block').css('width', '0'))
 
 change_bg_for_search = ->
-  if $('.search-background').length > 0
+  $('#user-navigation-search').on 'click', ->
     $('.user-navigation-item, .brand').addClass('user-navigation-item-white').removeClass('user-navigation-item');
     $('.search-background').fadeIn(300);
 
 enable_tooltips = ->
   $('[data-toggle="tooltip"]').tooltip()
 
-$('body').bind('page:change', upload_song)
-$('body').bind('page:change', enable_tooltips)
+change_bg_for_others = ->
+  $('#user-navigation-home, #user-navigation-profile, #user-navigation-settings').on 'click', ->
+    if $('.search-background').css('display')
+      $('.search-background').fadeOut(300)
+      $('.user-navigation-item-white, .brand').removeClass('user-navigation-item-white').addClass('user-navigation-item')
+
+fade_in_search_bg = ->
+  if $('.search-header').css('width') != '0px'
+    $('.user-navigation-item, .brand').addClass('user-navigation-item-white').removeClass('user-navigation-item');
+    $('.search-background').fadeIn(300);
 
 $ ->
   if $('.notice').length > 0
@@ -41,3 +49,5 @@ $ ->
   do upload_song
   do change_bg_for_search
   do enable_tooltips
+  do change_bg_for_others
+  do fade_in_search_bg

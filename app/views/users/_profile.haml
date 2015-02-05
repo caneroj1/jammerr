@@ -1,9 +1,7 @@
 .user-body-content
   .col-md-12
-<<<<<<< HEAD
-    %h2.profile-header.text-center
-      = @user.name
-      = can_edit_profile?
+    %h1.profile-header.text-center
+      Joseph Canero
     .col-md-12.text-center
       %p= @user.location
     .col-md-12.text-center.instruments-section
@@ -34,15 +32,3 @@
           %br
           Upload Video
         %h3 Cams
-=======
-    .search-background
-    .tab-content
-      .tab-pane#search{ class: matches_action?('search') }
-        = render partial: "search"
-      -# .tab-pane#home{ class: matches_action?('home') }
-        -# = render partial: "home"
-      .tab-pane#profile{ class: matches_action?('show') }
-        = render partial: "profile"
-      .tab-pane#settings{ class: matches_action?('settings') }
-        = render partial: "settings"
->>>>>>> remove_ajax_for_profile

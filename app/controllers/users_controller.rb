@@ -1,14 +1,24 @@
 class UsersController < ApplicationController
-  before_action :set_user_id_cookie
+  before_action :set_user_id_cookie, if: :needs_cookie
 
   def show
     @user = User.find(params[:id])
   end
 
   def search
+    @user = User.find(params[:id])
+
+    respond_to do |format|
+      format.html { render :show }
+    end
   end
 
   def settings
+    @user = User.find(params[:id])
+
+    respond_to do |format|
+      format.html { render :show }
+    end
   end
 
   def update
@@ -16,13 +26,6 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to "show" }
       format.js { render layout: false }
-    end
-  end
-
-  def async
-    @user = User.find(params[:id])
-    respond_to do |format|
-      format.html { render "#{params[:page]}", layout: false }
     end
   end
 
@@ -35,5 +38,9 @@ class UsersController < ApplicationController
 
   def set_user_id_cookie
     cookies[:uid] = current_user.id
+  end
+
+  def needs_cookie
+    cookies[:uid].nil?
   end
 end

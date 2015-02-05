@@ -8,26 +8,24 @@ RSpec.describe UsersController, :type => :controller do
     sign_in user
   end
 
-  describe 'GET #async' do
-    context 'search' do
-      it 'should render search.js.erb' do
-        get :async, page: :search, id: user.id
-        expect(response).to render_template :search
-      end
+  describe 'GET #search' do
+    it 'should render show.haml' do
+      get :search, id: user.id
+      expect(response).to render_template "users/show"
     end
+  end
 
-    context 'show' do
-      it 'should render show.js.erb' do
-        get :async, page: :show, id: user.id
-        expect(response).to render_template :show
-      end
+  describe 'GET #settings' do
+    it 'should render show.haml' do
+      get :settings, id: user.id
+      expect(response).to render_template "users/show"
     end
+  end
 
-    context 'settings' do
-      it 'should render settings.js.erb' do
-        get :async, page: :settings, id: user.id
-        expect(response).to render_template :settings
-      end
+  describe 'GET #show' do
+    it 'should render show.haml' do
+      get :show, id: user.id
+      expect(response).to render_template "users/show"
     end
   end
 
