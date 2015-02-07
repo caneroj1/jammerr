@@ -41,17 +41,23 @@ fade_in_search_bg = ->
     $('.left-navigation').css('background-color', 'rgba(255, 255, 255, 0)')
     $('.search-background').fadeIn(300);
 
-$ ->
-  # if $('.notice').length > 0
-  #   $('.notice').animate({
-  #     opacity: 0
-  #     }, 3000)
-  #
-  # if $('.alert').length > 0
-  #   $('.alert').animate({
-  #     opacity: 0
-  #     }, 3000)
+fade_outs = ->
+  if $('.notice').length > 0
+    $('.notice').animate({
+      opacity: 0
+      }, 3000)
 
+  if $('.alert').text().length > 1
+    $('.alert').animate({
+      opacity: 0
+      }, 3000)
+
+$(window).bind('page:change', change_bg_for_search)
+$(window).bind('page:change', change_bg_for_others)
+$(window).bind('page:change', fade_outs)
+
+$ ->
+  do fade_outs
   do upload_song
   do change_bg_for_search
   do enable_tooltips
