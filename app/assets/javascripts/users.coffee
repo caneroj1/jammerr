@@ -18,7 +18,10 @@ upload_song = ->
 
 change_bg_for_search = ->
   $('#user-navigation-search').on 'click', ->
-    $('.user-navigation-item, .brand').addClass('user-navigation-item-white').removeClass('user-navigation-item');
+    $('.left-navigation').animate({
+      backgroundColor : 'rgba(255, 255, 255, 0)'
+      }, 100, "linear", ()->
+        return)
     $('.search-background').fadeIn(300);
 
 enable_tooltips = ->
@@ -28,23 +31,26 @@ change_bg_for_others = ->
   $('#user-navigation-home, #user-navigation-profile, #user-navigation-settings').on 'click', ->
     if $('.search-background').css('display')
       $('.search-background').fadeOut(300)
-      $('.user-navigation-item-white, .brand').removeClass('user-navigation-item-white').addClass('user-navigation-item')
+      $('.left-navigation').animate({
+        backgroundColor : '#333'
+        }, 100, "linear", ()->
+          return)
 
 fade_in_search_bg = ->
   if $('.search-header').css('width') != '0px'
-    $('.user-navigation-item, .brand').addClass('user-navigation-item-white').removeClass('user-navigation-item');
+    $('.left-navigation').css('background-color', 'rgba(255, 255, 255, 0)')
     $('.search-background').fadeIn(300);
 
 $ ->
-  if $('.notice').length > 0
-    $('.notice').animate({
-      opacity: 0
-      }, 3000)
-
-  if $('.alert').length > 0
-    $('.alert').animate({
-      opacity: 0
-      }, 3000)
+  # if $('.notice').length > 0
+  #   $('.notice').animate({
+  #     opacity: 0
+  #     }, 3000)
+  #
+  # if $('.alert').length > 0
+  #   $('.alert').animate({
+  #     opacity: 0
+  #     }, 3000)
 
   do upload_song
   do change_bg_for_search
